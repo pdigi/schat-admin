@@ -2,10 +2,11 @@ import { makeStyles } from "@material-ui/core/styles";
 
 
 export const settings = {
-    name: "ShippCart",
+    name: "Schat",
     hostname: "shippcartja.com",
     website: "https://www.shippcartja.com",
     crm_url: "https://admin.shippcartja.com/",
+    
     signin_url: "https://account.shippcartja.com/signin",
     settings_url: "https://account.shippcartja.com/settings",
     logo: "https://cdn.shippcartja.com/assets/img/logo.png",
@@ -17,7 +18,7 @@ export const settings = {
     phone: "1876 833 7372",
     email: "hello@shippcartja.com",
   };
-  
+
 const drawerWidth = 240;
 export const myStyles = makeStyles((theme) => ({
   root: {
@@ -55,7 +56,7 @@ export const myStyles = makeStyles((theme) => ({
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
     },
-    backgroundColor: "#514487",
+    backgroundColor: "#0f0679",
   },
   menuButton: {
     marginRight: theme.spacing(2),

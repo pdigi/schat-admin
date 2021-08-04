@@ -3,6 +3,7 @@ import './App.css';
 
 import Nav from "./components/Nav";
 import Dashboard from './pages/Dashboard';
+import Chats from './pages/Chats'
 function App() {
   return (
     <div>
@@ -11,6 +12,12 @@ function App() {
           <Route path="/" exact>
             <Nav comp={<Dashboard />} />
           </Route>
+
+          <Route path="/chats" exact>
+            <Nav comp={<Chats />} />
+          </Route>
+
+
         </Switch>
       </Router>
     </div>

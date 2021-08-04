@@ -19,8 +19,11 @@ import Typography from '@material-ui/core/Typography';
 import {useTheme } from '@material-ui/core/styles';
 import {myStyles, settings} from '../utils/config'
 import { useHistory} from 'react-router-dom';
-import logo from '../logo.svg';
-
+import logo from '../assets/logo.svg';
+import Dashboard from '../pages/Dashboard';
+import { ExitToApp, Message } from '@material-ui/icons';
+import DashboardIcon from '@material-ui/icons/Dashboard';
+// import {settings} from "../utils/config"
 
 function Nav(props) {
     let history = useHistory();
@@ -47,23 +50,15 @@ function Nav(props) {
       <div className={classes.toolbar} style={{marginTop:0}} />
       <Divider />
       <List>
-        {[['Dasboard',"/dashboard"],['Packages',"/packages"],['Schedule Delivery',"/activity"],['Messages',"/messages"],].map((text, index) => (
+        {[['Dasboard',"/dashboard", <DashboardIcon/>],['Chats',"/chats",<Message/>],['Sign Out',"/signout", <ExitToApp/>],].map((text, index) => (
           <ListItem button key={text[0]} onClick={(e)=>clickLink(e, text)}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text[0]} />
+            <ListItemIcon>{text[2]}</ListItemIcon>
+             <ListItemText primary={text[0]} />
           </ListItem>
         ))}
       </List>
       <Divider />
-      <List>
-      {[['Activity Log',"/dashboard"],['Account',"/account"],['Deliveries',"/activity"],['Messages',"/messages"],].map((text, index) => (
-          <ListItem button key={text[0]} onClick={(e)=>clickLink(e, text)}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text[0]} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
+  </div>
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
