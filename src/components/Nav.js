@@ -50,6 +50,19 @@ function Nav(props) {
       <div className={classes.toolbar} style={{marginTop:0}} />
       <Divider />
       <List>
+        <div style={{height:'50vh'}}>
+        <List>
+        {[['Dasboard',"/dashboard", <DashboardIcon/>],['Chats',"/chats",<Message/>],['Sign Out',"/signout", <ExitToApp/>],].map((text, index) => (
+          <ListItem button key={text[0]} onClick={(e)=>clickLink(e, text)}>
+            <ListItemIcon>{text[2]}</ListItemIcon>
+             <ListItemText primary={text[0]} />
+          </ListItem>
+        ))}
+      </List>
+        </div>
+      </List>
+      <Divider />
+      <List>
         {[['Dasboard',"/dashboard", <DashboardIcon/>],['Chats',"/chats",<Message/>],['Sign Out',"/signout", <ExitToApp/>],].map((text, index) => (
           <ListItem button key={text[0]} onClick={(e)=>clickLink(e, text)}>
             <ListItemIcon>{text[2]}</ListItemIcon>
