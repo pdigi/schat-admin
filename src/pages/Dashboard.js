@@ -4,8 +4,7 @@ import React from "react"
 
     return (
         <>
-        <div>OK
-        </div>
+        
         </>
     )
 }

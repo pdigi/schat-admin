@@ -24,6 +24,8 @@ import Dashboard from '../pages/Dashboard';
 import { ExitToApp, Message } from '@material-ui/icons';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 // import {settings} from "../utils/config"
+import ChatList from './ChatList'
+
 
 function Nav(props) {
     let history = useHistory();
@@ -50,20 +52,13 @@ function Nav(props) {
       <div className={classes.toolbar} style={{marginTop:0}} />
       <Divider />
       <List>
-        <div style={{height:'50vh'}}>
-        <List>
-        {[['Dasboard',"/dashboard", <DashboardIcon/>],['Chats',"/chats",<Message/>],['Sign Out',"/signout", <ExitToApp/>],].map((text, index) => (
-          <ListItem button key={text[0]} onClick={(e)=>clickLink(e, text)}>
-            <ListItemIcon>{text[2]}</ListItemIcon>
-             <ListItemText primary={text[0]} />
-          </ListItem>
-        ))}
-      </List>
+        <div style={{height:'50vh', overflowY:'scroll'}}>
+       <ChatList/>
         </div>
       </List>
       <Divider />
       <List>
-        {[['Dasboard',"/dashboard", <DashboardIcon/>],['Chats',"/chats",<Message/>],['Sign Out',"/signout", <ExitToApp/>],].map((text, index) => (
+        {[['Dasboard',"/dashboard", <DashboardIcon/>],['Sign Out',"/signout", <ExitToApp/>],].map((text, index) => (
           <ListItem button key={text[0]} onClick={(e)=>clickLink(e, text)}>
             <ListItemIcon>{text[2]}</ListItemIcon>
              <ListItemText primary={text[0]} />
@@ -91,7 +86,7 @@ function Nav(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            {settings.name}
+            Chatting with Leanne
           </Typography>
           
         </Toolbar>

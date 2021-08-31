@@ -3,24 +3,27 @@ import './App.css';
 
 import Nav from "./components/Nav";
 import Dashboard from './pages/Dashboard';
-import Chats from './pages/Chats'
+import Chats from './pages/Chats';
+import ChatProvider from "./context/ChatContext"
+
+
 function App() {
   return (
-    <div>
+
+   
       <Router>
-        <Switch>
+        <Switch> <ChatProvider>
           <Route path="/" exact>
             <Nav comp={<Dashboard />} />
           </Route>
 
           <Route path="/chats" exact>
             <Nav comp={<Chats />} />
-          </Route>
-
-
+          </Route></ChatProvider>
         </Switch>
       </Router>
-    </div>
+    
+
   );
 }
 

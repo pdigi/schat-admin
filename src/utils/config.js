@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 
 export const settings = {
-    name: "Schat",
+    name: "Digi Support Chat",
     hostname: "shippcartja.com",
     website: "https://www.shippcartja.com",
     crm_url: "https://admin.shippcartja.com/",
