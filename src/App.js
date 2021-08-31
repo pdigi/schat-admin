@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import Dashboard from './pages/Dashboard';
 import Chats from './pages/Chats';
 import ChatProvider from "./context/ChatContext"
+import Chat from './components/Chat'
 
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
       <Router>
         <Switch> <ChatProvider>
           <Route path="/" exact>
-            <Nav comp={<Dashboard />} />
+            <Nav comp={<Chat />} />
           </Route>
 
           <Route path="/chats" exact>

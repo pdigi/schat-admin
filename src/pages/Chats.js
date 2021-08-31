@@ -12,7 +12,7 @@ import FullWidthTabs from "../components/FullWidthTabs";
 
     return (
         <>
-        <FullWidthTabs/>
+        ok
         </>
     )
 }

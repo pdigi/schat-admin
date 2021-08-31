@@ -35,8 +35,9 @@ function ChatList() {
         // if (!id) return false;
         try {
           const mydata = await dataProvider("get", "/users/", []);
-          setData(mydata.data.slice(0,4));
+          setData(mydata.data.slice(0,8));
         } catch (error) {
+            console.log(error)
         //   setToastMessage(error.message);
         //   setIsToastOpen(true);
         }
