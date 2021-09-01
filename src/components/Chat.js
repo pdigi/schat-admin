@@ -13,6 +13,7 @@ import {
 import { dataProvider } from "../utils/util";
 import { useChat } from "../context/ChatContext";
 import { Send } from "@material-ui/icons";
+import  "../assets/style.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -40,7 +41,7 @@ function Chat(props) {
     // fetch local storage chat
     try {
       const mydata = await dataProvider("get", "/posts/", []);
-      setData(mydata.data.slice(0, 40));
+      setData(mydata.data.slice(0, 10));
     } catch (error) {
       //   setToastMessage(error.message);
       //   setIsToastOpen(true);
@@ -53,32 +54,15 @@ function Chat(props) {
         <Grid item xs={12}>
 
             <div style={{height:'calc(100vh - 150px)', paddingBottom:50, overflowY:"scroll"}}>
-            {data?.map((i) => {
+            {data?.map((i, c) => {
             return (
-              <>
-                <ListItem alignItems="flex-start">
-                  <ListItemAvatar>
-                    <Avatar alt={i.title} src="/static/images/avatar/1.jpg" />
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary={i.title}
-                    secondary={
-                      <React.Fragment>
-                        <Typography
-                          component="span"
-                          variant="body2"
-                          className={classes.inline}
-                          color="textPrimary"
-                        >
-                          {/* Ali Connors */}
-                        </Typography>
-                        {" " + i.body}
-                      </React.Fragment>
-                    }
-                  />
-                </ListItem>
-                <Divider variant="inset" component="li" />
-              </>
+            
+
+                  <p className={c%2 === 0?"from-me":"from-them"}>
+                  {i.body}
+                  </p>
+            
+            
             );
           })}
                 </div>
