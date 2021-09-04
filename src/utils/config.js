@@ -76,7 +76,8 @@ export const myStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(1),
-    backgroundColor:"#F6F5F5"
+    backgroundColor:"#F6F5F5",
+    maxHeight:'1px'
   },
 
   //Paper

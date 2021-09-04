@@ -41,7 +41,7 @@ function Chat(props) {
     // fetch local storage chat
     try {
       const mydata = await dataProvider("get", "/posts/", []);
-      setData(mydata.data.slice(0, 10));
+      setData(mydata.data.slice(0, 40));
     } catch (error) {
       //   setToastMessage(error.message);
       //   setIsToastOpen(true);
@@ -53,34 +53,22 @@ function Chat(props) {
       <Grid container>
         <Grid item xs={12}>
 
-            <div style={{height:'calc(100vh - 150px)', paddingBottom:50, overflowY:"scroll"}}>
+            <div style={{maxHeight:'calc(100vh - 150px)', overflowY:"scroll"}} className="imessage">
+           
             {data?.map((i, c) => {
             return (
-            
-
-                  <p className={c%2 === 0?"from-me":"from-them"}>
-                  {i.body}
-                  </p>
-            
-            
+                  <p className={c%2 === 0?"from-me":"from-them  margin-b_one"}>
+                  {i.body.substring(0,10)}
+                  </p>                
             );
           })}
                 </div>
        
         </Grid>
         <Grid item xs={12} style={{display:'flex'}}>
-            <textarea style={{width:"100%", height:50, fontSize:'1.1em', marginTop:'10', flex:60}} rows={'3'}>
-                s
+            <textarea style={{width:"100%", height:50, fontSize:'1.1em', marginTop:'10', flex:100}} rows={'3'}>
+               
             </textarea><Button variant="contained" style={{flex:1}}><Send style={{color:'#666'}} /></Button>
-          {/* <TextField
-            style={{bottom:10, position:'absolute' }}
-            variant="outlined"
-            id="standard-multiline-static"
-            label="Multiline"
-            multiline
-            rows={3}
-            //   defaultValue="Default Value"
-          /> */}
         </Grid>
       </Grid>
     </>
