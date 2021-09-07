@@ -27,9 +27,13 @@ function ChatList() {
     useEffect(()=>{
         console.log(chatConfig ,"config")
 
-        loadChat(chatConfig);
+      fetchChatLog();
     },[chatConfig])
 
+
+    const fetchChatLog = async() => {
+
+    }
 
     React.useEffect(() => {
         loadData();
@@ -46,7 +50,6 @@ function ChatList() {
         }
       }
       
-
   return (
       <>
 
