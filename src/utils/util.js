@@ -68,3 +68,14 @@ export async function dataProvider(method, url, data) {
       
     }
   }
+
+
+  export function loadChat(value){
+
+    var data = {
+      channel: '1',
+      
+    }
+    return data;
+
+  }

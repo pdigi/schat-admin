@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import {Avatar, ListItem, ListItemAvatar, ListItemText, Typography, Divider} from '@material-ui/core'
 import { dataProvider } from "../utils/util";
 import {useChat, useChatUpdate} from '../context/ChatContext'
+import {loadChat} from '../utils/util'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -25,6 +26,8 @@ function ChatList() {
 
     useEffect(()=>{
         console.log(chatConfig ,"config")
+
+        loadChat(chatConfig);
     },[chatConfig])
 
 
