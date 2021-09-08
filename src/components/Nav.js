@@ -86,7 +86,7 @@ function Nav(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Chatting with Leanne
+            Chatting with Leanne1
           </Typography>
           
         </Toolbar>
