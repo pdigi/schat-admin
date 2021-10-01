@@ -16,8 +16,6 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-
-  
 function ChatList() {
     const classes = useStyles();
     const [data, setData] = React.useState([]);

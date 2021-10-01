@@ -13,14 +13,14 @@ function App() {
 
    
       <Router>
-        <Switch> <ChatProvider>
+        <Switch> <ChatProvider/>
           <Route path="/" exact>
             <Nav comp={<Chat />} />
           </Route>
 
-          <Route path="/chats" exact>
-            <Nav comp={<Chats />} />
-          </Route></ChatProvider>
+          <Route path="/chat" exact>
+            <Chat />
+          </Route>
         </Switch>
       </Router>
     
