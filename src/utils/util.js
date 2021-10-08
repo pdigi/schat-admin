@@ -12,6 +12,9 @@ if (process.env.NODE_ENV === "development") {
 } else {
   config.domain = "https://chat.digipoint.biz/";
 }
+
+config.domain = "https://chat.digipoint.biz/";
+
 axios.defaults.timeout = 6000;
 const axios_app = axios.create({
   baseURL: config.domain,
