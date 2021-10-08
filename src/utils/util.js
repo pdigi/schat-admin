@@ -8,9 +8,9 @@ export const config = {
 };
 
 if (process.env.NODE_ENV === "development") {
-  config.domain = "https://jsonplaceholder.typicode.com/";
+  config.domain = "http://165.22.12.72:5150/";
 } else {
-  config.domain = "https://jsonplaceholder.typicode.com/";
+  config.domain = "https://chat.digipoint.biz/";
 }
 axios.defaults.timeout = 6000;
 const axios_app = axios.create({
@@ -78,4 +78,14 @@ export async function dataProvider(method, url, data) {
     }
     return data;
 
+  }
+
+  export function saveChatLog(args){
+    console.log(args,"save args")
+    localStorage.setItem(args.room, JSON.stringify(args.chat));
+  }
+
+  export function getChatLog(args){
+    let d = localStorage.getItem(args.room)
+    return JSON.parse(d);
   }

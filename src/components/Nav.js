@@ -25,7 +25,7 @@ import { ExitToApp, Message } from '@material-ui/icons';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 // import {settings} from "../utils/config"
 import ChatList from './ChatList'
-
+import { useChat } from "../context/ChatContext";
 
 function Nav(props) {
     let history = useHistory();
@@ -38,6 +38,7 @@ function Nav(props) {
     setMobileOpen(!mobileOpen);
   };
 
+  const chatConfig = useChat();
   const clickLink = (e, text) => {
     history.push(""+text[1]);
     setMobileOpen(false);
@@ -86,7 +87,7 @@ function Nav(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Chatting with Leanne1
+            {chatConfig.user?"Chatting with "+chatConfig.user:""}
           </Typography>
           
         </Toolbar>
